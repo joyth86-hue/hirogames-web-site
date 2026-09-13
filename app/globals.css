@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ダークネイビー〜パープルのグラデーション背景。
+     WebApp_game側のブランドカラー（#14132a〜#1c1a3a）を踏襲。 */
+  --background: linear-gradient(160deg, #1c1a3a 0%, #17162f 45%, #100f24 100%);
+  --foreground: #f4f1ff;
+
+  /* アクセント（リンク・流れる模様の文字色などに使用） */
+  --color-accent: #c9c3ff;
+  --color-accent-strong: #a99bff;
+  --color-shadow-purple: #4a3f86;
+
+  /* 属性カラー */
+  --color-fire: #ff8f8f;
+  --color-grass: #8fe3b0;
+  --color-ice: #8fd3ff;
+  --color-water: #6ec3ff;
+  --color-rock: #c9a15a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-accent: var(--color-accent);
+  --color-accent-strong: var(--color-accent-strong);
+  --color-shadow-purple: var(--color-shadow-purple);
+  --color-fire: var(--color-fire);
+  --color-grass: var(--color-grass);
+  --color-ice: var(--color-ice);
+  --color-water: var(--color-water);
+  --color-rock: var(--color-rock);
+
+  /* 丸っこい手書き風フォントをブランド全体のベースにする。
+     next/font/google はCJKを含むフォントの扱いが不安定なため、
+     app/layout.tsx側で <link> タグから読み込んだWebフォントを
+     ここで通常のfont-sansとして割り当てている。 */
+  --font-sans:
+    "M PLUS Rounded 1c", var(--font-geist-sans), "Hiragino Maru Gothic ProN",
+    "Hiragino Sans", sans-serif;
   --font-mono: var(--font-geist-mono);
+  --font-brand: "Hachi Maru Pop", "M PLUS Rounded 1c", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ヘッダーのページ内アンカーリンク／PlayButtonの「ゲーム紹介へ」リンクを
+   クリックした際に、瞬間移動ではなくスムーズにスクロールさせる。 */
+html {
+  scroll-behavior: smooth;
 }
 
+/* サイトのブランドは常にこのダーク配色で固定する
+   （OS・ブラウザのダークモード設定には追従しない）。
+   実際に見えている背景は app/layout.tsx に置いた <PageBackground> （実体を
+   持つ position: fixed のdiv）。以前はここで `background-attachment: fixed`
+   を使っていたが、`.animate-float` 等のtransformアニメーションと組み合わさると
+   デスクトップ幅でスクロール中に背景が白飛びする既知の不具合があったため廃止した
+   （詳細はcomponents/PageBackground.tsxのコメント参照）。ここでの指定は
+   PageBackgroundが何らかの理由で描画されない場合の保険（通常のスクロールする
+   背景として、白背景が露出することだけは防ぐ）。 */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+@keyframes bg-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -210px -85px;
+  }
+}
+
+.animate-bg-drift {
+  animation: bg-drift 18s linear infinite;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float-y 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-up,
+  .animate-bg-drift,
+  .animate-float {
+    animation: none;
+  }
 }
