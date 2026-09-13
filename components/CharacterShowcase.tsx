@@ -20,9 +20,9 @@ export default function CharacterShowcase() {
             4人のヒロイン
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-foreground/75 sm:text-base">
-            炎・草・氷、3つの属性を操る4人の仲間。カエデとサユミはともに草属性だが、
-            武器種（法器と弓）の違いで戦い方が変わる。集めて育成し、
-            ステージに合わせて最大3人のパーティを組もう。
+            旅立ちの日、隣にいたのはアカネだけ。歩みを進めるうちに、コユキが、
+            カエデが、サユミが、少しずつ力を貸してくれるようになる。
+            誰と肩を並べるかで、見える景色も変わっていく。
           </p>
         </div>
 

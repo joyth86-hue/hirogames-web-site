@@ -17,8 +17,9 @@ export type Character = {
   blurb: string;
 };
 
-// Game 1 に登場する4人の仲間キャラクター。
+// hiro fantasy（仮）に登場する4人の仲間キャラクター。
 // 名前・属性・武器種は docs 側の roster.md に準拠。
+// 表示順は物語上の加入順（アカネ→コユキ→カエデ→サユミ）に合わせている。
 export const characters: Character[] = [
   {
     id: "c01",
@@ -30,15 +31,6 @@ export const characters: Character[] = [
     blurb: "剣を手に前線を駆ける、炎属性のアタッカー。",
   },
   {
-    id: "c02",
-    name: "カエデ",
-    romaji: "Kaede",
-    element: "草",
-    weapon: "法器",
-    image: c02,
-    blurb: "法器を操り味方を支える、草属性のサポーター。",
-  },
-  {
     id: "c03",
     name: "コユキ",
     romaji: "Koyuki",
@@ -46,6 +38,15 @@ export const characters: Character[] = [
     weapon: "法器",
     image: c03,
     blurb: "冷気をまとう法器使い、氷属性のアタッカー。",
+  },
+  {
+    id: "c02",
+    name: "カエデ",
+    romaji: "Kaede",
+    element: "草",
+    weapon: "法器",
+    image: c02,
+    blurb: "法器を操り味方を支える、草属性のサポーター。",
   },
   {
     id: "c04",

@@ -12,29 +12,31 @@ export default function Hero() {
 
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-16">
         <div className="flex w-full flex-col items-center text-center lg:items-start lg:text-left">
+          {/* l01.pngは黒背景に白い発光ロゴのPNG。mix-blend-mode:screenで
+              黒背景をサイトの背景色へなじませる（詳細はHeader.tsx参照）。 */}
           <Image
             src={logo}
             alt="hiro games"
-            className="animate-fade-up h-auto w-48 sm:w-60"
+            className="animate-fade-up h-auto w-48 mix-blend-screen sm:w-60"
             sizes="(min-width: 640px) 240px, 192px"
           />
 
-          <h1 className="animate-fade-up font-brand mt-6 text-6xl leading-none tracking-tight text-foreground [animation-delay:120ms] [text-shadow:4px_4px_0_#4a3f86] sm:text-7xl lg:text-8xl">
-            Game 1
+          <h1 className="animate-fade-up font-brand mt-6 flex flex-wrap items-end justify-center gap-x-3 gap-y-1 text-6xl leading-none tracking-tight text-foreground [animation-delay:120ms] [text-shadow:4px_4px_0_#4a3f86] sm:text-7xl lg:justify-start lg:text-8xl">
+            hiro fantasy
+            <span className="text-lg font-bold text-foreground/50 [text-shadow:none] sm:text-xl">
+              （仮）
+            </span>
           </h1>
 
           <p className="animate-fade-up mt-5 text-lg font-bold text-accent [animation-delay:200ms] sm:text-xl">
-            炎・草・氷 ― 3つの属性を操る4人のヒロインと歩む、10ステージの冒険。
+            たったひとりの旅立ちが、いつしか誰にも譲れない仲間との物語になる。
           </p>
 
           <p className="animate-fade-up mt-4 max-w-md text-sm leading-relaxed text-foreground/75 [animation-delay:280ms] sm:text-base">
-            3つの属性を操る4人の仲間を集めて育成し、最大3人でパーティを編成。
-            ターン制のコマンドバトルで弱点を突きながら、S-10のボスが待つ
-            全10ステージの冒険に挑もう。
+            戦いを重ねるほどに、新しい仲間が旅へ加わり、手にした力も少しずつ育っていく。
+            まだ見たことのない景色を目指して、今日も一歩を踏み出そう。
           </p>
 
-          {/* 「プレイする」は配信URLが無いため非活性表示（PlayButton参照）。
-              実際にページ内を移動する操作は、こちらの控えめなリンクに分離している。 */}
           <div className="animate-fade-up mt-8 flex flex-col items-center gap-4 [animation-delay:360ms] sm:flex-row">
             <PlayButton size="lg" />
             <a
@@ -57,7 +59,7 @@ export default function Hero() {
             </span>
             <Image
               src={heroArt}
-              alt="Game 1 のメインビジュアル。夜の和風ファンタジーの世界に立つヒロインたち"
+              alt="陽光の降り注ぐファンタジーの世界に立つ、4人のヒロインたち"
               fill
               priority
               placeholder="blur"

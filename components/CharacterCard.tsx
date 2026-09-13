@@ -19,10 +19,14 @@ export default function CharacterCard({ character }: { character: Character }) {
       className={`${glassCard} group overflow-hidden transition-transform duration-200 hover:-translate-y-1`}
     >
       <div className="p-3 pb-0 sm:p-4 sm:pb-0">
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl border-2 border-black bg-[#f4f1ff] shadow-[4px_4px_0_0_#4a3f86]">
+        <div className="relative aspect-[971/1619] w-full overflow-hidden rounded-xl border-2 border-black bg-[#f4f1ff] shadow-[4px_4px_0_0_#4a3f86]">
           <span className="absolute left-2 top-2 z-10 rounded-full border border-black bg-white px-2 py-0.5 text-[9px] font-bold text-black shadow-[2px_2px_0_0_#4a3f86]">
             キャラクター
           </span>
+          {/* 素材の実寸（971×1619）とアスペクト比を一致させ、object-cover
+              でも全身（足元まで）がきちんと収まるようにしている。以前は
+              aspect-[4/5]（横長寄り）だったため、object-top指定と相まって
+              足元が見切れてしまっていた。 */}
           <Image
             src={character.image}
             alt={`${character.name}（${character.romaji}）の立ち絵（ゲーム内ドット絵）`}

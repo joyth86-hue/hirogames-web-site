@@ -1,26 +1,21 @@
 import Image from "next/image";
 
 import showcaseArt from "@/public/images/game1/hero/top02.png";
-import ElementWheel from "@/components/ElementWheel";
 import PlayButton from "@/components/PlayButton";
 import { glassCard } from "@/lib/ui";
 
 const features = [
   {
-    title: "4人のヒロインを編成",
-    body: "炎・草・氷、3つの属性を操る4人のヒロイン。カエデとサユミはともに草属性だが、武器種（法器と弓）で戦い方が異なる。集めて育成し、その中から最大3人を選んでパーティを組む。",
+    title: "ひとりから、始まる物語",
+    body: "旅の始まりはいつもひとり。戦いを乗り越えるたびに新しい仲間が加わり、気づけばかけがえのないパーティになっている。",
   },
   {
-    title: "ターン制コマンドバトル",
-    body: "落ち着いて手を考えられるターン制。穏やかなホームのひとときから、緊迫のバトルBGMへ。",
+    title: "見極めて、仕掛ける。",
+    body: "ターン制のコマンドバトルだから、慌てなくていい。敵の弱点を見極め、仲間の力を引き出す一手を、じっくり選ぼう。",
   },
   {
-    title: "武器ガチャで強化",
-    body: "宝箱を開封して武器を入手。ランクはC・B・A・S・SSの5段階、上位ランクほど頼れる一振りに。",
-  },
-  {
-    title: "全10ステージの冒険",
-    body: "S-1からS-10まで連戦をこなして進む冒険。最後のS-10ではステージを守るボスが待ち受ける。",
+    title: "積み重ねが、力になる",
+    body: "レベルを上げ、武器を手に入れ、装備を整える。育てるほどに手応えが増していく楽しさは、この先「育てる楽しさ」で詳しく。",
   },
 ];
 
@@ -33,18 +28,17 @@ export default function GameShowcase() {
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-bold tracking-wide text-accent sm:text-base">
-            <span className="font-brand">Game 1</span> とは
+            <span className="font-brand">hiro fantasy</span>（仮）とは
           </p>
           <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-            ダークな世界観で紡ぐ、
+            ひとりの旅路が、
             <br className="sm:hidden" />
-            やさしい冒険。
+            かけがえのない絆に変わるまで。
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-foreground/75 sm:text-base">
-            ダークネイビーとパープルが基調の夜の和風ファンタジー世界を、
-            丸っこく手描き風の可愛いキャラクターたちと歩く、JRPG風の
-            ガチャバトルゲーム。属性の有利不利を読んだ戦略性と、
-            集めて育てる楽しさが詰まっている。
+            丸みを帯びた愛らしい仲間たちと、手描き感のあるファンタジーの世界を旅する
+            コマンドバトルRPG。じっくり狙いを定めて挑む戦いと、集めて育てる楽しさを、
+            飽きるまでとことん味わえる。
           </p>
         </div>
 
@@ -60,15 +54,6 @@ export default function GameShowcase() {
                 </p>
               </div>
             ))}
-
-            <div className={`${glassCard} p-6 sm:col-span-2`}>
-              <h3 className="text-lg font-bold text-foreground">
-                属性の相性
-              </h3>
-              <div className="mt-4">
-                <ElementWheel />
-              </div>
-            </div>
           </div>
 
           <div className="relative mx-auto w-full max-w-xs">
@@ -80,7 +65,7 @@ export default function GameShowcase() {
               </span>
               <Image
                 src={showcaseArt}
-                alt="Game 1 の戦闘イメージイラスト"
+                alt="夕焼けに染まるファンタジーの世界を進む、4人のヒロインたち"
                 fill
                 placeholder="blur"
                 sizes="(min-width: 1024px) 360px, 60vw"
@@ -90,15 +75,13 @@ export default function GameShowcase() {
           </div>
         </div>
 
-        {/* 「プレイする」は近日公開の非活性表示（PlayButton参照）。
-            実際にキャラクター紹介へ移動する操作はこちらの控えめなリンクで行う。 */}
         <div className="mt-12 flex flex-col items-center gap-3">
           <PlayButton size="md" />
           <a
             href="#characters"
             className="text-sm font-bold text-accent underline underline-offset-4 transition-colors hover:text-accent-strong"
           >
-            キャラクターを見る ↓
+            仲間たちを見る ↓
           </a>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function ComingSoon() {
             もっとゲームが増えます
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-foreground/75 sm:text-base">
-            hiro games では Game 1 に続き、これからも新しいゲームを
+            hiro games では「hiro fantasy（仮）」に続き、これからも新しいゲームを
             お届けしていく予定です。続報をお楽しみに。
           </p>
         </div>

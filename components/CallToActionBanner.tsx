@@ -23,20 +23,14 @@ export default function CallToActionBanner() {
 
           <div className="relative flex flex-col items-center px-6 py-14 text-center sm:py-20">
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-              さあ、冒険をはじめよう。
+              その先に、待っている物語がある。
             </h2>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground/75 sm:text-base">
-              4人の仲間と共に、S-10のボスが待つ冒険へ。Game 1 は現在配信準備中、
-              もうしばらくお待ちください。
+              アカネから始まる旅は、あなたの手でどこまでも広がっていく。
+              今すぐ飛び込んで、その続きを確かめよう。
             </p>
-            <div className="mt-8 flex flex-col items-center gap-3">
+            <div className="mt-8">
               <PlayButton size="lg" />
-              <a
-                href="#coming-soon"
-                className="text-sm font-bold text-accent underline underline-offset-4 transition-colors hover:text-accent-strong"
-              >
-                今後の展開を見る ↓
-              </a>
             </div>
           </div>
         </div>

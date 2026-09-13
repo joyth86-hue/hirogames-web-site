@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "hiro games",
+  title: "hiro fantasy（仮） | hiro games",
   description:
-    "hiro games（ヒログゲームズ）公式サイト。属性を操る4人のヒロインを集めて育成し、10ステージの冒険バトルに挑むJRPG風ソシャゲ「Game 1」を紹介しています。",
+    "hiro games（ヒログゲームズ）が贈るファンタジーRPG「hiro fantasy（仮）」公式サイト。たったひとりの旅立ちが、いつしか誰にも譲れない仲間との物語になる。",
   openGraph: {
-    title: "hiro games",
+    title: "hiro fantasy（仮）",
     description:
-      "属性を操る4人のヒロインを集めて育成し、10ステージの冒険バトルに挑むJRPG風ソシャゲ「Game 1」。",
+      "たったひとりの旅立ちが、いつしか誰にも譲れない仲間との物語になる。hiro games が贈るファンタジーRPG。",
     locale: "ja_JP",
     type: "website",
   },

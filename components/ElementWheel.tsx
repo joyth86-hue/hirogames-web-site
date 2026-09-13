@@ -28,8 +28,7 @@ export default function ElementWheel() {
       </div>
       <p className="mt-3 text-xs leading-relaxed text-foreground/60 sm:text-sm">
         矢印の先の属性を攻撃すると有利（ダメージ1.25倍）、逆向きに攻撃すると不利（0.75倍）。
-        岩属性の「古びたクマさん」や水属性の「水スラ」など、パーティにはいない属性を持つ敵も登場するため、
-        相性を読んだパーティ編成が重要になる。
+        相性を読んで挑もう。
       </p>
     </div>
   );
