@@ -5,7 +5,7 @@
 - `/`：サポート入口
 - `/ishiatsume/support/`：サポート・問い合わせ先
 - `/ishiatsume/privacy/`：プライバシーポリシー
-- 連絡先：joyth86@gmail.com（ユーザー指定）
+- 連絡先：hirogames86@gmail.com（ユーザー指定）
 
 `npm ci` → `npm run build`。静的出力は`out/`。ローカルプレビューは`npm run dev -- --port 3100`。
 
