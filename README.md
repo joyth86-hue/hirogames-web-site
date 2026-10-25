@@ -1,17 +1,12 @@
-# Hiro Games Web Site
+# いしあつめ サポートサイト
 
-制作したブラウザゲームを紹介するサイトです。Next.js + TypeScript + Tailwind CSS 構成。
+旧WebApp_MainSiteのNext.js・TypeScript・ビルド設定をWSへコピーし、新しいサポート専用サイトを作成。元フォルダーは変更しない。
 
-ゲーム本体（実装）は同階層の `WebApp_game` フォルダで開発しています。このリポジトリでは参照のみ行い、編集はしません。
+- `/`：サポート入口
+- `/ishiatsume/support/`：サポート・問い合わせ先
+- `/ishiatsume/privacy/`：プライバシーポリシー
+- 連絡先：joyth86@gmail.com（ユーザー指定）
 
-## 開発
+`npm ci` → `npm run build`。静的出力は`out/`。ローカルプレビューは`npm run dev -- --port 3100`。
 
-```bash
-npm run dev
-```
-
-[http://localhost:3000](http://localhost:3000) で確認できます。
-
-## デプロイ
-
-GitHub に push すると Vercel が自動でビルド・デプロイします。
+公開先は既存のhirogames-web-site.vercel.appを想定。実際の公開結果はdocs/WEB_HOSTING_REUSE.mdに記録する。Hobby利用条件については、アプリ本体の有無だけでは判断しない。本サイトは販売訴求・購入リンク・広告を設けない情報提供ページとしているが、Vercelの適用判断を保証するものではない。
